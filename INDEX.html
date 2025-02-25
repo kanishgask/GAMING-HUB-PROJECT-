@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Leaderboard</title>
+    <link rel="stylesheet" href="project.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- Login Page -->
+        <div id="loginPage" class="page">
+            <header>
+                <h1>Login to Your Account</h1>
+            </header>
+            <main>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <button type="submit">Login</button>
+                    <p class="message" id="loginMessage"></p>
+                </form>
+            </main>
+        </div>
+
+        <!-- Home Page -->
+        <!-- Home Page -->
+        <div id="homePage" class="page hidden">
+            <header>
+                <h1>Welcome to Gaming Leaderboard</h1>
+                <nav>
+                    <a href="#" onclick="showPage('leaderboardPage')">Leaderboard</a>
+                    <a href="#" onclick="showPage('aboutPage')">About Us</a>
+                    <a href="#" onclick="showPage('contactPage')">Contact</a>
+                </nav>
+            </header>
+            <main>
+                <section class="hero">
+                    <h2>Join the Competition!</h2>
+                    <p>Showcase your skills and climb the ranks in our gaming leaderboard.</p>
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.peL2shDzordoSZ3HdZoLKQHaE8&pid=Api&P=0&h=180"
+                        alt="Gaming Hero Image">
+                </section>
+
+                <section class="featured-games">
+                    <h2>Featured Games</h2>
+                    <div class="game-grid">
+                        <div class="game-item">
+                            <img src="https://tse2.mm.bing.net/th?id=OIP.peL2shDzordoSZ3HdZoLKQHaE8&pid=Api&P=0&h=180"
+                                alt="Game 1">
+                            <h3>Game 1</h3>
+                            <p>Exciting gameplay and epic battles.</p>
+                        </div>
+                        <div class="game-item">
+                            <img src="https://tse1.mm.bing.net/th?id=OIP.Rpn8OtmhDob1yDBvU6cFRQHaDe&pid=Api&P=0&h=180"
+                                alt="Game 2">
+                            <h3>Game 2</h3>
+                            <p>Strategic challenges await you.</p>
+                        </div>
+                        <div class="game-item">
+                            <img src="https://tse4.mm.bing.net/th?id=OIP.ZL3DgjcTBV1Zu_SO9WP3GAHaE8&pid=Api&P=0&h=180"
+                                alt="Game 3">
+                            <h3>Game 3</h3>
+                            <p>Compete against the best players!</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="community">
+                    <h2>Join Our Community</h2>
+                    <p>Connect with other gamers and share your achievements.</p>
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.f8VypL346W3uVNjOYB7bTwHaEJ&pid=Api&P=0&h=180"
+                        alt="Gaming Community">
+                    <button onclick="showPage('aboutPage')">Learn More About Us</button>
+                </section>
+
+                <section class="testimonials">
+                    <h2>What Our Players Say</h2>
+                    <blockquote>
+                        "This leaderboard has changed the way I game! The competition is fierce!"
+                        <footer>- Player1</footer>
+                    </blockquote>
+                    <blockquote>
+                        "I love the community here. It's great to connect with other gamers."
+                        <footer>- Player2</footer>
+                    </blockquote>
+                </section>
+            </main>
+        </div>
+        <!-- Leaderboard Page --><!-- Leaderboard Page -->
+        <div id="leaderboardPage" class="page hidden">
+            <header>
+                <h1>Leaderboard</h1>
+                <nav>
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <a href="#" onclick="showPage('aboutPage')">About Us</a>
+                    <a href="#" onclick="showPage('contactPage')">Contact</a>
+                </nav>
+            </header>
+            <main>
+                <section class="leaderboard">
+                    <h2>Top Players</h2>
+                    <table id="leaderboardTable">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Username</th>
+                                <th>Score</th>
+                                <th>Player Image</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Player1</td>
+                                <td>1500</td>
+                                <td><img src="https://tse4.mm.bing.net/th?id=OIP.IEtvHs6bMRXd6njX6t8hngHaE8&pid=Api&P=0&h=180"
+                                        alt="Player 1"></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Player2</td>
+                                <td>1400</td>
+                                <td><img src="https://tse2.mm.bing.net/th?id=OIP.SrwUnQtYI0GbyJ6BlU_O4gHaEk&pid=Api&P=0&h=180"
+                                        alt="Player 2"></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Player3</td>
+                                <td>1300</td>
+                                <td><img src="https://tse3.mm.bing.net/th?id=OIP.HEqKe55hPE8Ub_J3tZBXJAHaDt&pid=Api&P=0&h=180"
+                                        alt="Player 3"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="charts">
+                    <h2>Score Distribution</h2>
+                    <div class="chart-container">
+                        <canvas id="scoreChart"></canvas>
+                    </div>
+
+                    <h2>Player Performance</h2>
+                    <div class="chart-container">
+                        <canvas id="performanceChart"></canvas>
+                    </div>
+                </section>
+
+                <section class="game-images">
+                    <h2>Game Highlights</h2>
+                    <div class="image-gallery">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.wJ0eEDptQbe7ck7iA5Cc7QHaHa&pid=Api&P=0&h=180"
+                            alt="Game 1">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.IXE4RBhsU05lEsvnWB_5GQHaE8&pid=Api&P=0&h=180"
+                            alt="Game 2">
+                        <img src="https://tse2.mm.bing.net/th?id=OIP.SrwUnQtYI0GbyJ6BlU_O4gHaEk&pid=Api&P=0&h=180"
+                            alt="Game 3">
+                        <img src="https://tse3.mm.bing.net/th?id=OIP.HEqKe55hPE8Ub_J3tZBXJAHaDt&pid=Api&P=0&h=180"
+                            alt="Game 4">
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <!-- Include Chart.js script -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            // Score Distribution Pie Chart
+            const ctx1 = document.getElementById('scoreChart').getContext('2d');
+            const scoreChart = new Chart(ctx1, {
+                type: 'pie',
+                data: {
+                    labels: ['Player1', 'Player2', 'Player3'],
+                    datasets: [{
+                        label: 'Score Distribution',
+                        data: [1500, 1400, 1300],
+                        backgroundColor: [
+                            'rgba(30, 144, 255, 0.7)',
+                            'rgba(70, 130, 180, 0.7)',
+                            'rgba(0, 191, 255, 0.7)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 255, 255, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Score Distribution'
+                        }
+                    }
+                }
+            });
+
+            // Player Performance Bar Chart
+            const ctx2 = document.getElementById('performanceChart').getContext('2d');
+            const performanceChart = new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['Player1', 'Player2', 'Player3'],
+                    datasets: [{
+                        label: 'Performance Scores',
+                        data: [1500, 1400, 1300],
+                        backgroundColor: [
+                            'rgba(30, 144, 255, 0.7)',
+                            'rgba(70, 130, 180, 0.7)',
+                            'rgba(0, 191, 255, 0.7)',
+                        ],
+                        borderColor: [
+                            'rgba(255, 255, 255, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Player Performance'
+                        }
+                    }
+                }
+            });
+        </script>
+
+
+        <!-- About Us Page -->
+        <div id="aboutPage" class="page hidden">
+            <header>
+                <h1>About Gaming Leaderboard</h1>
+                <nav>
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <a href="#" onclick="showPage('leaderboardPage')">Leaderboard</a>
+                    <a href="#" onclick="showPage('contactPage')">Contact</a>
+                </nav>
+            </header>
+            <main>
+                <h2>Our Mission</h2>
+                <p>To create a competitive platform for gamers around the world to showcase their skills and
+                    achievements.</p>
+                <img src="https://tse4.mm.bing.net/th?id=OIP.apVTPU6MwK6t94JNlEo5zQHaFj&pid=Api&P=0&h=180"
+                    alt="Our Mission">
+                <h2>Meet Our Team</h2>
+                <div class="team-member">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.nobuefVil6QxuHqvvvO06gHaEP&pid=Api&P=0&h=180"
+                        alt="Team Member 1">
+                    <h3>Jane Doe</h3>
+                </div>
+                <div class="team-member">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.qxxl0vG6mZ0XWHptHYYKOQHaDE&pid=Api&P=0&h=180"
+                        alt="Team Member 2">
+                    <h3>John Smith</h3>
+                </div>
+                <div class="team-member">
+                    <img src="https://tse4.mm.bing.net/th?id=OIP.cpC1qKnPHfDY63-Q4MuGxAHaEV&pid=Api&P=0&h=180"
+                        alt="Team Member 3">
+                    <h3>Alice Johnson</h3>
+                </div>
+            </main>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contactPage" class="page hidden">
+            <header>
+                <h1>Contact Us</h1>
+                <nav>
+                    <a href="#" onclick="showPage('homePage')">Home</a>
+                    <a href="#" onclick="showPage('leaderboardPage')">Leaderboard</a>
+                    <a href="#" onclick="showPage('aboutPage')">About Us</a>
+                </nav>
+            </header>
+            <main>
+                <h2>Get in Touch</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" rows="4" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </main>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Gaming Leaderboard. All rights reserved.</p>
+    </footer>
+
+    <script src="project.js"></script>
+</body>
+
+</html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Leaderboard</title>
+    <link rel="stylesheet" href="project.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.umd.js"></script>
+</head>
