@@ -58,6 +58,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 ## 📞 Contact
 
 For any inquiries or support, reach out at:
-- 📧 Email: your-email@example.com
-- 🐦 Twitter: [@yourhandle](https://twitter.com/yourhandle)
-- 🌐 Website: [yourwebsite.com](https://yourwebsite.com)
+- 📧 Email: kanishga.s.2023.cse@ritchennai.edu.in@example.com
